@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { AppProvider } from '@shopify/polaris';
 import englishTranslation from '@shopify/polaris/locales/en.json';
 import '@shopify/polaris/dist/styles.css';
