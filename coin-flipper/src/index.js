@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { AppProvider } from '@shopify/polaris';
+import englishTranslation from '@shopify/polaris/locales/en.json';
+import '@shopify/polaris/dist/styles.css';
+
 ReactDOM.render(
-  <React.StrictMode>
+  <AppProvider i18n={englishTranslation}>
     <App />
-  </React.StrictMode>,
+  </AppProvider>,
   document.getElementById('root')
 );
 
