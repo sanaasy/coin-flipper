@@ -1,5 +1,6 @@
-import React from "react";
-import { Button } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Button, Image } from 'react-bootstrap';
+// import Coin from "../Coin";
 
 const location = {
   position: 'absolute', 
@@ -9,8 +10,24 @@ const location = {
 };
 
 const FlipButton = () => {
+  const [side, setSide] = useState(`${process.env.PUBLIC_URL}/images/tails.png`);
+
+  const buttonClick = () => {
+    const sides = ['heads', 'tails'];
+    const side = sides[Math.floor(Math.random() * 2)];
+    console.log(`Side: ${side}`);
+  
+    const image = `${process.env.PUBLIC_URL}/images/${side}.png`;
+    console.log(`Image: ${image}`);
+  
+    setSide(image);
+  }
+
   return (
-    <Button style={location} variant="outline-primary" size="lg">Flip Coin</Button>
+    <div>
+      <Image src={side} />
+      <Button style={location} variant="outline-primary" size="lg" onClick={buttonClick}>Flip Coin</Button>
+    </div>
   );
 };
 
