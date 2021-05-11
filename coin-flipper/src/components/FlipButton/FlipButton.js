@@ -9,6 +9,14 @@ const location = {
   fontSize: '30px'
 };
 
+const coin = {
+  width: '300px',
+  height: '300px',
+  position: 'absolute', 
+  left: '41%',
+  top: '30%'
+}
+
 const FlipButton = () => {
   const [side, setSide] = useState(`${process.env.PUBLIC_URL}/images/tails.png`);
 
@@ -25,7 +33,7 @@ const FlipButton = () => {
 
   return (
     <div>
-      <Image src={side} />
+      <Image src={side} style={coin} />
       <Button style={location} variant="outline-primary" size="lg" onClick={buttonClick}>Flip Coin</Button>
     </div>
   );
